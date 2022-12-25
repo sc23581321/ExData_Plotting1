@@ -1,4 +1,3 @@
-library(tidyverse)
 library(lubridate)
 
 #read the data table into pwr
