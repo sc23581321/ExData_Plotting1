@@ -1,8 +1,8 @@
 library(tidyverse)
 
 #read in data table
-pwr <- read.table("./household_power_consumption.txt", sep = ";", header = TRUE)
-pwr$Global_active_power <- as.numeric(pwr$Global_active_power)
+pwr <- read.table("./household_power_consumption.txt", sep = ";", header = TRUE, colClasses = c("character", "character", rep("numeric", 7)),
+                  na.strings = "?")
 
 #create column new_date with date time format
 pwr$new_date <- strptime(paste(pwr$Date, pwr$Time), "%d/%m/%Y %H:%M:%S")
